@@ -16,3 +16,7 @@ inTree x (Node a left right)
 
 fromList::(Ord a)=>[a]->Tree a
 fromList = foldr treeInsert EmptyTree 
+
+inPrint::(Show a)=>Tree a->String
+inPrint EmptyTree = ""
+inPrint (Node a left right) = inPrint left ++ show a ++ inPrint right
